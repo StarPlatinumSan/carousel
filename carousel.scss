@@ -1,0 +1,111 @@
+$green: #087f5b;
+$grey: #343a40;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #F1F4FD;
+}
+
+.btn {
+    width: 40px;
+    height: 40px;
+    font-size: 2.2rem;
+    background-color: rgb(20, 20, 24);
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+
+    
+}
+
+#left {
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#right {
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel {
+    width: 95%;
+    max-width: 80rem;
+    position: relative;
+
+    .scrollbar {
+        height: 1em;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+
+        .scrollbarTrack {
+            height: 4px;
+            width: 100%;
+            background-color: #ccc;
+            position: relative;
+            border-radius: 4px;
+
+            .scrollbarThumb {
+                position: absolute;
+                height: 4px;
+                width: 50%;
+                background-color: rgba(20, 20, 24, 0.9);
+                border-radius: inherit;
+                cursor: grab;
+
+                ::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: -10px;
+                    bottom: -10px;
+                }
+
+                &:active {
+                    cursor: grabbing;
+                    height: 8px;
+                    top: -2px;
+                }
+            }
+        }
+    }
+}
+
+.slider {
+    .imageList {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 1em;
+        overflow-x: auto;
+        scrollbar-width: none;
+        margin-bottom: 1em;
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .item {
+            width: 325px;
+            height: 400px;
+            object-fit: cover;
+        }
+    }
+}
